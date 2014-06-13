@@ -36,15 +36,15 @@
 # RPM-based distributions.
 # . /lib/lsb/init-functions
 
-APP_NAME=<%= node[:express][:app_name] %>
+NAME=<%= node[:express][:app_name] %>
 NODE_VER=<%= node[:express][:nodejs_ver] %>
 NODE_BIN_DIR="/root/.nvm/v$NODE_VER/bin"
 NODE_PATH="/root/.nvm/v$NODE_VER/lib/node_modules"
-APPLICATION_DIRECTORY="/var/www/$APP_NAME/current"
+APPLICATION_DIRECTORY="/var/www/$NAME/current"
 APPLICATION_RULES_ENDPOINT_URL="<%= node[:express][:endpoint]%>"
 APPLICATION_START="<%= node[:express][:start_app] %>"
-PIDFILE="/var/www/$APP_NAME/shared/tmp/pids/$APP_NAME.pid"
-LOGFILE="/var/www/$APP_NAME/shared/logs/production.log"
+PIDFILE="/var/www/$NAME/shared/tmp/pids/$NAME.pid"
+LOGFILE="/var/www/$NAME/shared/logs/production.log"
 RUN_AS_USER=<%= node[:express][:user] %>
 
 # Add node to the path for situations in which the environment is passed.
